@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CPMM.Views.Pages
+namespace UEMM.Views.Pages
 {
     /// <summary>
     /// Interaction logic for About.xaml

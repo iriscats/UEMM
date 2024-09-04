@@ -1,13 +1,10 @@
-﻿// This Source Code Form is subject to the terms of the GNU GPL-3.0.
-// If a copy of the GPL was not distributed with this file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html.
-// Copyright (C) 2022 Leszek Pomianowski and CPMM Contributors.
-// All Rights Reserved.
+﻿
 
-using CPMM.Core.Common;
-using CPMM.Core.Mods;
+using UEMM.Core.Common;
+using UEMM.Core.Mods;
 using System.IO;
 
-namespace CPMM.Core.Installer
+namespace UEMM.Core.Installer
 {
     /// <summary>
     /// Provides functionality for installing mods.
@@ -76,7 +73,7 @@ namespace CPMM.Core.Installer
             if (String.IsNullOrEmpty(TemporaryPath) || !Directory.Exists(TemporaryPath))
                 TemporaryPath = Path.Combine(
                     Path.GetTempPath(),
-                    "cpmm\\mods"
+                    "uemm\\mods"
                 );
         }
     }

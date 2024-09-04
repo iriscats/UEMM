@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="CPMM.App"
+    x:Class="UEMM.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:CPMM"
+    xmlns:local="clr-namespace:UEMM"
     StartupUri="Views/Container.xaml"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     >

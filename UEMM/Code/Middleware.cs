@@ -1,13 +1,10 @@
-﻿// This Source Code Form is subject to the terms of the GNU GPL-3.0.
-// If a copy of the GPL was not distributed with this file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html.
-// Copyright (C) 2022 Leszek Pomianowski and CPMM Contributors.
-// All Rights Reserved.
+﻿
 
 using System;
 using System.Reflection;
 using System.Windows;
 
-namespace CPMM.Code
+namespace UEMM.Code
 {
     /// <summary>
     /// A class to separate additional functions from <see cref="Application"/>.
@@ -56,7 +53,7 @@ namespace CPMM.Code
 #if DEBUG
             System.Diagnostics.Debug.WriteLine(
                 $"INFO | {typeof(Middleware)} disposed, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
-                "CPMM");
+                "UEMM");
 #endif
             Lepo.i18n.Translator.Flush();
             // Dispose middleware resources.
@@ -73,7 +70,7 @@ namespace CPMM.Code
                     Lepo.i18n.Translator.SetLanguage(
                         Assembly.GetExecutingAssembly(),
                         "en_US",
-                        "CPMM.Assets.Strings.en_US.yml",
+                        "UEMM.Assets.Strings.en_US.yml",
                         false
                     );
                     break;

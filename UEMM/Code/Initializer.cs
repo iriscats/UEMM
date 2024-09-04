@@ -1,10 +1,7 @@
-﻿// This Source Code Form is subject to the terms of the GNU GPL-3.0.
-// If a copy of the GPL was not distributed with this file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html.
-// Copyright (C) 2022 Leszek Pomianowski and CPMM Contributors.
-// All Rights Reserved.
+﻿
 
-using CPMM.Core.Game;
-using CPMM.Views;
+using UEMM.Core.Game;
+using UEMM.Views;
 using System;
 using System.Globalization;
 using System.IO;
@@ -12,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace CPMM.Code
+namespace UEMM.Code
 {
     /// <summary>
     /// Initializes some parts of the manager.
@@ -78,11 +75,11 @@ namespace CPMM.Code
                     catch (Exception ex)
                     {
 #if DEBUG
-                        System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Initializer)} could not detect system language | {ex}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "CPMM");
+                        System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Initializer)} could not detect system language | {ex}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "UEMM");
 #endif
                     }
 #if DEBUG
-                    System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Initializer)} could not detect system language | {e}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "CPMM");
+                    System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Initializer)} could not detect system language | {e}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "UEMM");
 #endif
                 }
             }
@@ -95,7 +92,7 @@ namespace CPMM.Code
                 catch (Exception e)
                 {
 #if DEBUG
-                    System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Initializer)} could not detect system language | {e}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "CPMM");
+                    System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Initializer)} could not detect system language | {e}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "UEMM");
 #endif
                 }
             }

@@ -1,13 +1,10 @@
-﻿// This Source Code Form is subject to the terms of the GNU GPL-3.0.
-// If a copy of the GPL was not distributed with this file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html.
-// Copyright (C) 2022 Leszek Pomianowski and CPMM Contributors.
-// All Rights Reserved.
+﻿
 
-using CPMM.Core.Common;
+using UEMM.Core.Common;
 using SevenZip;
 using System.IO;
 
-namespace CPMM.Core.Installer
+namespace UEMM.Core.Installer
 {
     /// <summary>
     /// Provides functions for unpacking the archives with the help of LZMA and 7Z.
@@ -21,7 +18,7 @@ namespace CPMM.Core.Installer
 #if DEBUG
                 System.Diagnostics.Debug.WriteLine(
                     $"WARNING | {input} does not exist, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
-                    "CPMM.Core");
+                    "UEMM.Core");
 #endif
                 return new ExtractingResult
                 {
@@ -43,7 +40,7 @@ namespace CPMM.Core.Installer
 #if DEBUG
                 System.Diagnostics.Debug.WriteLine(
                     $"WARNING | {input} is password protected (or another error has occurred), Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
-                    "CPMM.Core");
+                    "UEMM.Core");
 #endif
                 return new ExtractingResult
                 {
@@ -64,7 +61,7 @@ namespace CPMM.Core.Installer
 #if DEBUG
                 System.Diagnostics.Debug.WriteLine(
                     $"WARNING | {input} archive is unsupported, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
-                    "CPMM.Core");
+                    "UEMM.Core");
 #endif
                 return new ExtractingResult
                 {
@@ -82,7 +79,7 @@ namespace CPMM.Core.Installer
 #if DEBUG
                 System.Diagnostics.Debug.WriteLine(
                     $"INFO | Archive extracted to {output}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
-                    "CPMM.Core");
+                    "UEMM.Core");
 #endif
 
                 return new ExtractingResult
@@ -98,7 +95,7 @@ namespace CPMM.Core.Installer
 #if DEBUG
                 System.Diagnostics.Debug.WriteLine(
                     $"INFO | Extracting {input} failed | {e}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
-                    "CPMM.Core");
+                    "UEMM.Core");
 #endif
 
                 return new ExtractingResult

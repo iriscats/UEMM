@@ -1,4 +1,4 @@
-﻿namespace CPMM.Core.Mods
+﻿namespace UEMM.Core.Mods
 {
     /// <summary>
     /// Mod category.

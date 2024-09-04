@@ -1,4 +1,4 @@
-﻿namespace CPMM.Converters
+﻿namespace UEMM.Converters
 {
     internal class FileListToRelativeConverter
     {
