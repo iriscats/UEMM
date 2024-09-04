@@ -2,11 +2,9 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
-    <ApplicationIcon>cpmm.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +25,7 @@
   <ItemGroup>
     <Resource Include="Assets\Images\relic.png" />
     <Resource Include="Assets\Images\relic_logo.png" />
-    <Resource Include="cpmm.ico" />
+    <Resource Include="Assets\exe.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Modules\CPMM.Core\CPMM.Core.csproj" />
+    <ProjectReference Include="..\UEMM.Core\UEMM.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,22 +53,5 @@
     <Resource Include="Assets\Images\nightcity.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="License - 7-Zip.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="License - FiraCode.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="License - LZMA.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="License - SevenZipSharp GPL.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="License - SevenZipSharp LGPL.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 
 </Project>

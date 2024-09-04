@@ -3,7 +3,7 @@
 // Copyright (C) 2022 Leszek Pomianowski and CPMM Contributors.
 // All Rights Reserved.
 
-using CPMM.Core.Win32;
+//using CPMM.Core.Win32;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -67,13 +67,13 @@ namespace CPMM
                 return;
 
             // Process name is different from main window title
-            var baseInstance = User32.FindWindow(null, "Cyberpunk 2077 Mod Manager");
-            if (baseInstance != IntPtr.Zero)
-            {
-                // Set focus if alrady running.
-                User32.ShowWindow(baseInstance, 1);
-                User32.SetForegroundWindow(baseInstance);
-            }
+            //var baseInstance = User32.FindWindow(null, "Cyberpunk 2077 Mod Manager");
+            // if (baseInstance != IntPtr.Zero)
+            //{
+            // Set focus if alrady running.
+            //  User32.ShowWindow(baseInstance, 1);
+            //  User32.SetForegroundWindow(baseInstance);
+            // }
 
             // Close current
             Shutdown();

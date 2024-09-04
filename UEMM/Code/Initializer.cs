@@ -42,17 +42,7 @@ namespace CPMM.Code
 
             Application.Current.MainWindow.Hide();
 
-            new Hacking
-            {
-                Config = new Hacking.Configuration
-                {
-                    LockUserControl = true,
-                    ShowFullIntro = true,
-                    TopMost = true
-                },
-                WindowStartupLocation = WindowStartupLocation.CenterScreen,
-                OnFinished = OnHackingFinished
-            }.Show();
+
         }
 
         private static void MarkAsInitialized()
@@ -72,9 +62,9 @@ namespace CPMM.Code
             {
                 try
                 {
-                    var userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
+                    var userLanguages = new string[10];  //Windows.System.UserProfile.GlobalizationPreferences.Languages;
 
-                    if (userLanguages?.Count > 0)
+                    if (userLanguages?.Length > 0)
                     {
                         detectedLanguage = userLanguages.First().ToLower().Trim();
                     }
@@ -213,9 +203,7 @@ namespace CPMM.Code
             if (Application.Current.MainWindow == null)
                 return;
 
-#if DEBUG
-            System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Hacking)} finished, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "CPMM");
-#endif
+
             await GH.DispatchAsync(() =>
             {
                 if (Application.Current.MainWindow == null)
