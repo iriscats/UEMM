@@ -1,0 +1,65 @@
+﻿# Global things
+global.unknown: Unknown
+global.fileNotSelected: File not selected.
+global.directoryNotSelected: The directory has not been selected.
+global.dialog.allFiles: All files
+global.dialog.selectMod: Select Cyberpunk 2077 modification
+global.dialog.selectMod.plural: Select Cyberpunk 2077 modifications
+global.dialog.cyberMods: Cyberpunk 2077 Mods
+global.selectedFiles.single: '%s file selected.'
+global.selectedFiles.plural: '%s files selected.'
+global.openLink: Open
+
+# Container / Tray menu
+container.nav.dashboard: Home
+container.nav.list: Mods
+container.nav.install: Add new
+container.nav.about: About
+container.nav.settings: Settings
+container.loading.default: Connecting with Arasaka Cloud.
+
+# Dashboard
+dashboard.headers.installedMods: Installed modifications
+dashboard.headers.gameVersion: Game version
+dashboard.headers.managerVersion: Manager version
+dashboard.card.list.title: Installed modifications
+dashboard.card.list.description: Page containing a list of all mods you have installed.
+dashboard.card.add.title: Add new
+dashboard.card.add.description: Add new modifications.
+dashboard.card.help.title: Help
+dashboard.card.help.description: Get help on the most common problems.
+
+# Installator
+install.select: Select archive
+install.card.select.title: Archive with modification files
+
+# Settings
+settings.directories: Game directories
+settings.selectDir: Select
+settings.card.rootGameDir.title: Main game directory
+settings.card.settingsGameDir.title: Game settings directory
+settings.card.savesGameDir.title: Game saves directory
+settings.modifications: Mods
+settings.card.backupMods.title: Store backups
+settings.card.backupMods.description: Keep backup copies of modifications and overwritten game files.
+settings.card.backupsLocation.title: Backups location
+settings.app: App
+settings.card.home.title: Home page
+settings.card.home.description: Which page of the application should be displayed at startup.
+settings.card.language.title: Langauge
+settings.card.language.description: The language of the mod manager interface.
+settings.card.mica.title: Use Fluent Mica background
+settings.card.mica.description: If available, the app will use the Mica background for Windows 11.
+settings.card.tray.title: Tray icon
+settings.card.tray.description: Show application icon and menu in system tray.
+
+# About
+about.externalSoftware: External software
+about.externalSoftware.description: External software used to create this application.
+about.card.nexus.title: Nexus Mods
+about.card.nexus.description: The official page of the manager app on Nexus Mods.
+about.card.github.title: GitHub
+about.card.github.description: Application source code.
+
+# Mod card
+# modCard.rootDirectory: Main dir
