@@ -59,7 +59,7 @@ namespace UEMM.Code
             {
                 try
                 {
-                    var userLanguages = new string[10];  //Windows.System.UserProfile.GlobalizationPreferences.Languages;
+                    var userLanguages = new string[0];  //Windows.System.UserProfile.GlobalizationPreferences.Languages;
 
                     if (userLanguages?.Length > 0)
                     {

@@ -9,7 +9,6 @@
     Title="About"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    Style="{StaticResource UiPageScrollable}"
     mc:Ignorable="d">
 
     <Grid Margin="24,0,24,24">

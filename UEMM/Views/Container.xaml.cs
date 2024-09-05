@@ -34,7 +34,7 @@ namespace UEMM.Views
     /// <summary>
     /// Interaction logic for Container.xaml
     /// </summary>
-    public partial class Container : Window
+    public partial class Container 
     {
         internal ContainerData ContainerDataStack { get; } = new();
 
