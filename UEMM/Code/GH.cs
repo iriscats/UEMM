@@ -52,8 +52,8 @@ namespace UEMM.Code
         /// <summary>
         /// Shows mod edit dialog.
         /// </summary>
-        public static void ShowEditDialog(int modId, string name, string version, int priority, Action onSave) =>
-            (Application.Current.MainWindow as Container)?.ShowModEditDialog(modId, name, version, priority, onSave);
+       // public static void ShowEditDialog(int modId, string name, string version, int priority, Action onSave) =>
+         //   (Application.Current.MainWindow as Container)?.ShowModEditDialog(modId, name, version, priority, onSave);
 
         /// <summary>
         /// Synchronously executes delegated action on UI thread.
