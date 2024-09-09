@@ -6,6 +6,7 @@
     xmlns:pages="clr-namespace:UEMM.Views.Pages"
     xmlns:tray="http://schemas.lepo.co/wpfui/2022/xaml/tray"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:i18n="http://schemas.lepo.co/i18n/2022/xaml"
     Title="Unreal Engine Mod Manager"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -76,7 +77,18 @@
                         <ui:SymbolIcon Symbol="Settings24" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem
+                   Content="{i18n:StringLocalizer 'dashboard.card.list.title'}"
+                   NavigationCacheMode="Disabled"
+                   TargetPageType="{x:Type pages:Settings}">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Settings24" />
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
             </ui:NavigationView.FooterMenuItems>
+
         </ui:NavigationView>
 
         <tray:NotifyIcon

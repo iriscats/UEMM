@@ -5,6 +5,8 @@ using Lepo.i18n;
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using Wpf.Ui.Controls;
+using UEMM.ViewModels;
 
 namespace UEMM.Views.Pages
 {
@@ -36,9 +38,11 @@ namespace UEMM.Views.Pages
     /// <summary>
     /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class Dashboard : Page
+    public partial class Dashboard  : INavigableView<DashboardViewModel>
     {
         internal DashboardData DashboardDataStack { get; } = new();
+
+        public DashboardViewModel ViewModel =>  new DashboardViewModel();
 
         public Dashboard()
         {
