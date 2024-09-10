@@ -1,7 +1,4 @@
-// This Source Code Form is subject to the terms of the MIT License.
-// If a copy of the MIT was not distributed with this file, You can obtain one at https://opensource.org/licenses/MIT.
-// Copyright (C) Leszek Pomianowski and Lepo.i18n Contributors.
-// All Rights Reserved.
+
 
 using UEMM.Services;
 using UEMM.ViewModels.Pages;
@@ -42,7 +39,7 @@ public partial class App
                 _ = b.FromJson(Assembly.GetExecutingAssembly(), "Assets.Langs.Translations-zh-CN.json", new CultureInfo("zh-CN"));
                 _ = b.FromJson(Assembly.GetExecutingAssembly(), "Assets.Langs.Translations-en-US.json", new CultureInfo("en-US"));
 
-                var cul = new CultureInfo((JsonConvert.DeserializeObject<LanInfo>(File.ReadAllText(@"CultureInfos.json")).CultureInfo));
+                var cul = new CultureInfo((JsonConvert.DeserializeObject<LangInfo>(File.ReadAllText(@"CultureInfos.json")).CultureInfo));
                 b.SetCulture(cul);
                 Application.Current.Resources["MainDirection"] = cul.EnglishName == "English (United States)" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft;
             });

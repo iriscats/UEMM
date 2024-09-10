@@ -1,7 +1,4 @@
-// This Source Code Form is subject to the terms of the MIT License.
-// If a copy of the MIT was not distributed with this file, You can obtain one at https://opensource.org/licenses/MIT.
-// Copyright (C) Leszek Pomianowski and Lepo.i18n Contributors.
-// All Rights Reserved.
+
 
 using Microsoft.Extensions.Localization;
 using Wpf.Ui.Appearance;
@@ -88,12 +85,12 @@ public partial class SettingsViewModel : ObservableObject, INavigationAware
         if (isChecked)
         {
             _cultureManager.SetCulture("en-US");
-            File.WriteAllText(@"CultureInfos.json", JsonConvert.SerializeObject(new LanInfo() { CultureInfo = "en-US" }));
+            File.WriteAllText(@"CultureInfos.json", JsonConvert.SerializeObject(new LangInfo() { CultureInfo = "en-US" }));
         }
         else
         {
             _cultureManager.SetCulture("fa-IR");
-            File.WriteAllText(@"CultureInfos.json", JsonConvert.SerializeObject(new LanInfo() { CultureInfo = "fa-IR" }));
+            File.WriteAllText(@"CultureInfos.json", JsonConvert.SerializeObject(new LangInfo() { CultureInfo = "fa-IR" }));
         }
 
         AppVersion = _stringLocalizer["Lan"].Value;

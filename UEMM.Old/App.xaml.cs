@@ -41,7 +41,7 @@ namespace UEMM
                 _ = b.FromYaml(Assembly.GetExecutingAssembly(), "Assets.Strings.en_US.yml", new CultureInfo("en-US"));
                 //_ = b.FromJson(Assembly.GetExecutingAssembly(), "Resources.Translations-en-US.json", new CultureInfo("en-US"));
 
-                //var cul = new CultureInfo((JsonConvert.DeserializeObject<LanInfo>(File.ReadAllText(@"CultureInfos.json")).CultureInfo));
+                //var cul = new CultureInfo((JsonConvert.DeserializeObject<LangInfo>(File.ReadAllText(@"CultureInfos.json")).CultureInfo));
                 var cul = new CultureInfo("en-US");
                 b.SetCulture(cul);
 
