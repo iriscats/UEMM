@@ -3,6 +3,8 @@
 // Copyright (C) Leszek Pomianowski and Lepo.i18n Contributors.
 // All Rights Reserved.
 
+using System;
+using System.Windows;
 using Wpf.Ui;
 
 namespace UEMM.Services;
