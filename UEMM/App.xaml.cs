@@ -88,6 +88,8 @@ public partial class App
     private void OnStartup(object sender, StartupEventArgs e)
     {
         _host.Start();
+
+        Middleware.Initialize();
     }
 
     /// <summary>
