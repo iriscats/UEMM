@@ -84,13 +84,13 @@ public partial class SettingsViewModel : ObservableObject, INavigationAware
     {
         if (isChecked)
         {
-            _cultureManager.SetCulture("en-US");
-            File.WriteAllText(@"CultureInfos.json", JsonConvert.SerializeObject(new LangInfo() { CultureInfo = "en-US" }));
+            _cultureManager.SetCulture("zh-CN");
+            File.WriteAllText(@"Settings.json", JsonConvert.SerializeObject(new LangInfo() { CultureInfo = "zh-CN" }));
         }
         else
         {
-            _cultureManager.SetCulture("fa-IR");
-            File.WriteAllText(@"CultureInfos.json", JsonConvert.SerializeObject(new LangInfo() { CultureInfo = "fa-IR" }));
+            _cultureManager.SetCulture("en-US");
+            File.WriteAllText(@"Settings.json", JsonConvert.SerializeObject(new LangInfo() { CultureInfo = "en-US" }));
         }
 
         AppVersion = _stringLocalizer["Lan"].Value;

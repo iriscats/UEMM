@@ -28,7 +28,7 @@ public partial class MainWindowViewModel : ObservableObject
     public MainWindowViewModel(IStringLocalizer stringLocalizer)
     {
         _stringLocalizer = stringLocalizer;
-        ApplicationTitle = _stringLocalizer["Titele"].Value;
+        ApplicationTitle = _stringLocalizer["Title"].Value;
         MenuItems =
             [
                 new NavigationViewItem()
@@ -41,7 +41,7 @@ public partial class MainWindowViewModel : ObservableObject
                 {
                     Content =_stringLocalizer["Menu.Data"].Value,
                     Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
-                    TargetPageType = typeof(Views.Pages.DataPage)
+                    //TargetPageType = typeof(Views.Pages.DataPage)
                 }
             ];
 

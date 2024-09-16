@@ -39,9 +39,9 @@ public partial class App
                 _ = b.FromJson(Assembly.GetExecutingAssembly(), "Assets.Langs.Translations-zh-CN.json", new CultureInfo("zh-CN"));
                 _ = b.FromJson(Assembly.GetExecutingAssembly(), "Assets.Langs.Translations-en-US.json", new CultureInfo("en-US"));
 
-                var cul = new CultureInfo((JsonConvert.DeserializeObject<LangInfo>(File.ReadAllText(@"CultureInfos.json")).CultureInfo));
+                var cul = new CultureInfo((JsonConvert.DeserializeObject<LangInfo>(File.ReadAllText(@"Settings.json")).CultureInfo));
                 b.SetCulture(cul);
-                Application.Current.Resources["MainDirection"] = cul.EnglishName == "English (United States)" ? FlowDirection.LeftToRight : FlowDirection.RightToLeft;
+      
             });
 
 
@@ -65,11 +65,12 @@ public partial class App
 
             _ = services.AddSingleton<DashboardPage>();
             _ = services.AddSingleton<DashboardViewModel>();
-            _ = services.AddTransient<DataPage>();
-            _ = services.AddTransient<DataViewModel>();
             _ = services.AddSingleton<SettingsPage>();
             _ = services.AddSingleton<SettingsViewModel>();
         }).Build();
+
+
+    internal readonly Code.Middleware Middleware = new();
 
     /// <summary>
     /// Gets registered service.

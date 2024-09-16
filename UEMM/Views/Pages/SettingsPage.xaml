@@ -50,7 +50,7 @@
                       Text="{Binding ViewModel.AppVersion, Mode=TwoWay ,UpdateSourceTrigger =PropertyChanged}" />
 
         <ui:ToggleSwitch Margin="0 15"
-                         OffContent="فارسی"
+                         OffContent="中文"
                          IsChecked="{Binding ViewModel.IsEnglish, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          Command="{Binding ViewModel.ChangeLanCommand}"
                          CommandParameter="{Binding Path=IsChecked, RelativeSource={RelativeSource Self}}"

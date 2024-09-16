@@ -3,7 +3,6 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <ApplicationIcon>exe.ico</ApplicationIcon>
     <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -26,11 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UEMM.Core\UEMM.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <Resource Include="Assets\exe.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\Settings.json">
+    <None Update="Settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
