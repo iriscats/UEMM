@@ -17,9 +17,8 @@
       mc:Ignorable="d"
       >
 
-    <Grid Margin="24,0,24,24">
+    <Grid Margin="24,24,24,24">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -27,6 +26,7 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -46,7 +46,14 @@
                 </StackPanel>
             </ui:Card>
 
-            <ui:Card Grid.Column="2" Margin="6,0,0,0">
+            <ui:Card Grid.Column="2" Margin="6,0">
+                <StackPanel>
+                    <TextBlock FontSize="18" Text="{Binding GameVersion, Mode=OneWay}" />
+                    <TextBlock Foreground="{DynamicResource TextFillColorSecondaryBrush}" Text="{i18n:StringLocalizer 'dashboard.headers.gameVersion'}" />
+                </StackPanel>
+            </ui:Card>
+
+            <ui:Card Grid.Column="3" Margin="6,0,0,0">
                 <StackPanel>
                     <TextBlock FontSize="18" Text="{Binding ManagerVersion, Mode=OneWay}" />
                     <TextBlock Foreground="{DynamicResource TextFillColorSecondaryBrush}" Text="{i18n:StringLocalizer 'dashboard.headers.managerVersion'}" />
@@ -54,58 +61,36 @@
             </ui:Card>
         </Grid>
 
-        <ui:CardAction
-            Grid.Row="1"
-            Margin="0,12,0,0"
-            Click="ButtonAction_OnClick"
-            Icon="Library24"
-            Tag="list">
-            <StackPanel>
-                <TextBlock
-                    Margin="0,0,0,4"
-                    FontWeight="Medium"
-                    Text="{i18n:StringLocalizer 'dashboard.card.list.title'}" />
-                <TextBlock
-                    FontSize="10"
-                    Foreground="{DynamicResource TextFillColorTertiaryBrush}"
-                    Text="{i18n:StringLocalizer 'dashboard.card.list.description'}" />
-            </StackPanel>
-        </ui:CardAction>
+        <ui:ListView Grid.Row="1"
+            ItemsSource="{Binding ViewModel.MyCollection}">
+            <ui:ListView.View>
+                <ui:GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding FirstName}"
+                                    Header="Name" />
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}"
+                                    Header="Priority" />
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}"
+                                    Header="Status" />
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}"
+                                    Header="Version" />
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}"
+                                    Header="Type" />
+                </ui:GridView>
+            </ui:ListView.View>
+        </ui:ListView>
 
-        <ui:CardAction
-            Grid.Row="2"
-            Margin="0,12,0,0"
-            Click="ButtonAction_OnClick"
-            Icon="Add24"
-            Tag="add">
-            <StackPanel>
-                <TextBlock
+        <StackPanel Grid.Row="3"
+            Orientation="Horizontal"
+            >
+            <TextBlock
                     Margin="0,0,0,4"
                     FontWeight="Medium"
-                    Text="{i18n:StringLocalizer 'dashboard.card.add.title'}" />
-                <TextBlock
+                 />
+            <TextBlock
                     FontSize="10"
                     Foreground="{DynamicResource TextFillColorTertiaryBrush}"
-                    Text="{i18n:StringLocalizer 'dashboard.card.add.description'}" />
-            </StackPanel>
-        </ui:CardAction>
+                 />
+        </StackPanel>
 
-        <ui:CardAction
-            Grid.Row="3"
-            Margin="0,12,0,0"
-            Click="ButtonAction_OnClick"
-            Icon="ChatHelp24"
-            Tag="help">
-            <StackPanel>
-                <TextBlock
-                    Margin="0,0,0,4"
-                    FontWeight="Medium"
-                    Text="{i18n:StringLocalizer 'dashboard.card.help.title'}" />
-                <TextBlock
-                    FontSize="10"
-                    Foreground="{DynamicResource TextFillColorTertiaryBrush}"
-                    Text="{i18n:StringLocalizer 'dashboard.card.help.description'}" />
-            </StackPanel>
-        </ui:CardAction>
     </Grid>
 </Page>

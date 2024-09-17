@@ -17,18 +17,8 @@
                  ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
                  ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
                  Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                 FlowDirection="{DynamicResource MainDirection}"
-                 WindowCornerPreference="Round"
-                 WindowBackdropType="Mica"
                  WindowStartupLocation="CenterScreen"
-                 ExtendsContentIntoTitleBar="True"
                  >
-
-    <ui:FluentWindow.InputBindings>
-        <KeyBinding Key="F"
-                    Command="{Binding ElementName=AutoSuggestBox, Path=FocusCommand}"
-                    Modifiers="Control" />
-    </ui:FluentWindow.InputBindings>
 
     <Grid>
         <ui:TitleBar x:Name="TitleBar"
@@ -41,8 +31,6 @@
         </ui:TitleBar>
 
         <ui:NavigationView x:Name="RootNavigation"
-                           Padding="42,0,42,0"
-                           BreadcrumbBar="{Binding ElementName=BreadcrumbBar}"
                            FooterMenuItemsSource="{Binding ViewModel.FooterMenuItems, Mode=OneWay}"
                            FrameMargin="0"
                            IsBackButtonVisible="Visible"
@@ -52,19 +40,7 @@
                            OpenPaneLength="200"
                            PaneDisplayMode="Left"
                            TitleBar="{Binding ElementName=TitleBar, Mode=OneWay}">
-            <ui:NavigationView.Header>
-                <ui:BreadcrumbBar x:Name="BreadcrumbBar"
-                                  Margin="42,32,42,20" />
-            </ui:NavigationView.Header>
-
-            <ui:NavigationView.ContentOverlay>
-                <Grid>
-                    <ui:SnackbarPresenter x:Name="SnackbarPresenter" />
-                </Grid>
-            </ui:NavigationView.ContentOverlay>
         </ui:NavigationView>
-
-        <ContentPresenter x:Name="RootContentDialog"  Grid.Row="0" />
 
         <tray:NotifyIcon
             Grid.Row="0"

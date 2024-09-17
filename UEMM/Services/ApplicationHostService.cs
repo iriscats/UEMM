@@ -14,12 +14,9 @@ public class ApplicationHostService : IHostedService
 {
     private readonly IServiceProvider _serviceProvider;
 
-    private INavigationWindow _navigationWindow;
+    private INavigationWindow? _navigationWindow = null;
 
-    public ApplicationHostService(IServiceProvider serviceProvider)
-    {
-        _serviceProvider = serviceProvider;
-    }
+    public ApplicationHostService(IServiceProvider serviceProvider) => _serviceProvider = serviceProvider;
 
     /// <summary>
     /// Triggered when the application host is ready to start the service.
