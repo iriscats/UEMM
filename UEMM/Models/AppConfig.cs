@@ -1,6 +1,4 @@
-﻿
-
-namespace UEMM.Models;
+﻿namespace UEMM.Models;
 
 public class AppConfig
 {

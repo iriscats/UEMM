@@ -1,13 +1,9 @@
-﻿
-
-using UEMM.Core.Game;
-using UEMM.Views;
-using System;
+﻿using UEMM.Core.Game;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows;
+
 
 namespace UEMM.Code
 {
@@ -34,18 +30,16 @@ namespace UEMM.Code
 
         private static void ShowHackingConsole()
         {
-            if (Application.Current.MainWindow == null)
-                return;
-
-            Application.Current.MainWindow.Hide();
-
-
+            // if (Application.Current.MainWindow == null)
+            //     return;
+            //
+            // Application.Current.MainWindow.Hide();
         }
 
         private static void MarkAsInitialized()
         {
-            GH.Settings.Options.Initialized = true;
-            GH.Settings.Save();
+            // GH.Settings.Options.Initialized = true;
+            // GH.Settings.Save();
         }
 
         private static void CheckSupportedLanguages()
@@ -59,7 +53,7 @@ namespace UEMM.Code
             {
                 try
                 {
-                    var userLanguages = new string[0];  //Windows.System.UserProfile.GlobalizationPreferences.Languages;
+                    var userLanguages = new string[0]; //Windows.System.UserProfile.GlobalizationPreferences.Languages;
 
                     if (userLanguages?.Length > 0)
                     {
@@ -75,11 +69,15 @@ namespace UEMM.Code
                     catch (Exception ex)
                     {
 #if DEBUG
-                        System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Initializer)} could not detect system language | {ex}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "UEMM");
+                        System.Diagnostics.Debug.WriteLine(
+                            $"INFO | {typeof(Initializer)} could not detect system language | {ex}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
+                            "UEMM");
 #endif
                     }
 #if DEBUG
-                    System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Initializer)} could not detect system language | {e}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "UEMM");
+                    System.Diagnostics.Debug.WriteLine(
+                        $"INFO | {typeof(Initializer)} could not detect system language | {e}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
+                        "UEMM");
 #endif
                 }
             }
@@ -92,7 +90,9 @@ namespace UEMM.Code
                 catch (Exception e)
                 {
 #if DEBUG
-                    System.Diagnostics.Debug.WriteLine($"INFO | {typeof(Initializer)} could not detect system language | {e}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}", "UEMM");
+                    System.Diagnostics.Debug.WriteLine(
+                        $"INFO | {typeof(Initializer)} could not detect system language | {e}, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
+                        "UEMM");
 #endif
                 }
             }
@@ -104,116 +104,116 @@ namespace UEMM.Code
 
             // TODO: Use Languages class here
 
-            switch (detectedLanguage)
-            {
-                case "pl":
-                    GH.Settings.Options.Language = "pl_PL";
-                    break;
-
-                case "ru":
-                    GH.Settings.Options.Language = "ru_RU";
-                    break;
-
-                case "cs":
-                    GH.Settings.Options.Language = "cs_CZ";
-                    break;
-
-                case "de":
-                    GH.Settings.Options.Language = "de_DE";
-                    break;
-
-                case "es":
-                    GH.Settings.Options.Language = "es_ES";
-                    break;
-
-                case "fr":
-                    GH.Settings.Options.Language = "fr_FR";
-                    break;
-
-                case "hu":
-                    GH.Settings.Options.Language = "hu_HU";
-                    break;
-
-                case "it":
-                    GH.Settings.Options.Language = "it_IT";
-                    break;
-
-                case "tr":
-                    GH.Settings.Options.Language = "tr_TR";
-                    break;
-
-                case "ja":
-                case "jp":
-                    GH.Settings.Options.Language = "ja_JP";
-                    break;
-
-                case "pt":
-                case "br":
-                    GH.Settings.Options.Language = "pt_BR";
-                    break;
-
-                case "zh":
-                case "cn":
-                    GH.Settings.Options.Language = "zh_CN";
-                    break;
-            }
+            // switch (detectedLanguage)
+            // {
+            //     case "pl":
+            //         GH.Settings.Options.Language = "pl_PL";
+            //         break;
+            //
+            //     case "ru":
+            //         GH.Settings.Options.Language = "ru_RU";
+            //         break;
+            //
+            //     case "cs":
+            //         GH.Settings.Options.Language = "cs_CZ";
+            //         break;
+            //
+            //     case "de":
+            //         GH.Settings.Options.Language = "de_DE";
+            //         break;
+            //
+            //     case "es":
+            //         GH.Settings.Options.Language = "es_ES";
+            //         break;
+            //
+            //     case "fr":
+            //         GH.Settings.Options.Language = "fr_FR";
+            //         break;
+            //
+            //     case "hu":
+            //         GH.Settings.Options.Language = "hu_HU";
+            //         break;
+            //
+            //     case "it":
+            //         GH.Settings.Options.Language = "it_IT";
+            //         break;
+            //
+            //     case "tr":
+            //         GH.Settings.Options.Language = "tr_TR";
+            //         break;
+            //
+            //     case "ja":
+            //     case "jp":
+            //         GH.Settings.Options.Language = "ja_JP";
+            //         break;
+            //
+            //     case "pt":
+            //     case "br":
+            //         GH.Settings.Options.Language = "pt_BR";
+            //         break;
+            //
+            //     case "zh":
+            //     case "cn":
+            //         GH.Settings.Options.Language = "zh_CN";
+            //         break;
+            // }
         }
 
         private static void AutoLocateGameDir()
         {
-            var gameLocation = GameInstance.TryToLocate();
-
-            if (String.IsNullOrEmpty(gameLocation))
-                return;
-
-            GH.Settings.Options.GameRootDirectory = gameLocation;
+            // var gameLocation = GameInstance.TryToLocate();
+            //
+            // if (String.IsNullOrEmpty(gameLocation))
+            //     return;
+            //
+            // GH.Settings.Options.GameRootDirectory = gameLocation;
         }
 
         private static void AutoLocateGameAdditionalDirs()
         {
-            var userPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\";
-
-            var settingsPath = Path.Combine(
-                userPath,
-                Core.Game.Locations.SettingsSuffix
-            );
-
-            if (Directory.Exists(settingsPath))
-                GH.Settings.Options.GameSettingsDirectory = settingsPath;
-
-            System.Diagnostics.Debug.WriteLine("INFO | User " + userPath);
-            System.Diagnostics.Debug.WriteLine("INFO | " + settingsPath);
-
-            var savesPath = Path.Combine(
-                userPath,
-                Core.Game.Locations.SavesSuffix
-            );
-
-            if (Directory.Exists(savesPath))
-                GH.Settings.Options.GameSavesDirectory = savesPath;
-
-            System.Diagnostics.Debug.WriteLine("INFO | " + savesPath);
+            // var userPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\";
+            //
+            // var settingsPath = Path.Combine(
+            //     userPath,
+            //     Core.Game.Locations.SettingsSuffix
+            // );
+            //
+            // if (Directory.Exists(settingsPath))
+            //     GH.Settings.Options.GameSettingsDirectory = settingsPath;
+            //
+            // System.Diagnostics.Debug.WriteLine("INFO | User " + userPath);
+            // System.Diagnostics.Debug.WriteLine("INFO | " + settingsPath);
+            //
+            // var savesPath = Path.Combine(
+            //     userPath,
+            //     Core.Game.Locations.SavesSuffix
+            // );
+            //
+            // if (Directory.Exists(savesPath))
+            //     GH.Settings.Options.GameSavesDirectory = savesPath;
+            //
+            // System.Diagnostics.Debug.WriteLine("INFO | " + savesPath);
         }
 
         private static async Task OnHackingFinished(object sender)
         {
-            if (Application.Current.MainWindow == null)
-                return;
-
-
-            await GH.DispatchAsync(() =>
-            {
-                if (Application.Current.MainWindow == null)
-                    return;
-
-                Application.Current.MainWindow.Show();
-                Application.Current.MainWindow.Activate();
-
-                Application.Current.MainWindow.Topmost = true;
-                Application.Current.MainWindow.Topmost = false;
-
-                Application.Current.MainWindow.Focus();
-            });
+            // if (Application.Current.MainWindow == null)
+            //     return;
+            //
+            //
+            // await GH.DispatchAsync(() =>
+            // {
+            //     if (Application.Current.MainWindow == null)
+            //         return;
+            //
+            //     Application.Current.MainWindow.Show();
+            //     Application.Current.MainWindow.Activate();
+            //
+            //     Application.Current.MainWindow.Topmost = true;
+            //     Application.Current.MainWindow.Topmost = false;
+            //
+            //     Application.Current.MainWindow.Focus();
+            // });
         }
     }
 }

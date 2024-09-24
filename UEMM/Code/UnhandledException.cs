@@ -1,11 +1,8 @@
-﻿
-
-using System;
-using System.Globalization;
+﻿using System.Globalization;
 using System.IO;
-using System.Windows;
 
-namespace UEMM.Code
+
+namespace UEMM.Core.Handler
 {
     internal class UnhandledException
     {
@@ -37,7 +34,7 @@ namespace UEMM.Code
             if (!String.IsNullOrEmpty(reportPath))
                 message += "\n\nReport saved to:\n" + reportPath;
 
-            MessageBox.Show(message, "Whoa! Cyberpunk 2077 Mod Manager has flatlined.");
+            //MessageBox.Show(message, "Whoa! Cyberpunk 2077 Mod Manager has flatlined.");
         }
 
         protected static string BuildReportMessage(Exception exception)

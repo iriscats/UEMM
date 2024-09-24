@@ -1,21 +1,22 @@
-﻿
-
-namespace UEMM.ViewModels.Pages;
+﻿namespace UEMM.ViewModels.Pages;
 
 public partial class DashboardViewModel : ObservableObject
 {
-    [ObservableProperty]
+    [ObservableProperty] 
     private int _installMod = 0;
 
 
-    [ObservableProperty]
+    [ObservableProperty] 
     private int _totalMod = 0;
 
 
-    [ObservableProperty]
+    [ObservableProperty] 
     private string _gameVersion = "unknown";
 
 
-    [ObservableProperty]
+    [ObservableProperty] 
     private string _frameworkVersion = "unknown";
+    
+    
+    
 }

@@ -1,22 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <LangVersion>12</LangVersion>
+    </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Avalonia" Version="11.0.5"/>
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.5"/>
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.5"/>
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.5"/>
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5"/>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="Lepo.i18n.DependencyInjection" Version="2.0.0" />
-    <PackageReference Include="Lepo.i18n.Wpf" Version="2.0.0" />
-    <PackageReference Include="Lepo.i18n.Json" Version="2.0.0" />
-    <PackageReference Include="WPF-UI" Version="3.0.5" />
-    <PackageReference Include="WPF-UI.Tray" Version="3.0.5" />
-	  <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>

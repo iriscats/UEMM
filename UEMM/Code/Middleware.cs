@@ -21,7 +21,7 @@ namespace UEMM.Code
         /// <summary>
         /// Custom shortcuts.
         /// </summary>
-        public readonly Core.Input.Shortcuts Shortcuts = new();
+        //public readonly Core.Input.Shortcuts Shortcuts = new();
 
         /// <summary>
         /// Game instance.
@@ -37,10 +37,10 @@ namespace UEMM.Code
         {
             SetLanguage(Settings.Options.Language);
 
-            Shortcuts.Initialize(Application.Current.MainWindow!);
-
-            if (!String.IsNullOrEmpty(Settings.Options.GameRootDirectory))
-                GameInstance.Fetch(Settings.Options.GameRootDirectory);
+            // Shortcuts.Initialize(Application.Current.MainWindow!);
+            //
+            // if (!String.IsNullOrEmpty(Settings.Options.GameRootDirectory))
+            //     GameInstance.Fetch(Settings.Options.GameRootDirectory);
 
             return true;
         }
@@ -55,7 +55,7 @@ namespace UEMM.Code
                 $"INFO | {typeof(Middleware)} disposed, Thread: {System.Threading.Thread.CurrentThread.ManagedThreadId}",
                 "UEMM");
 #endif
-            Lepo.i18n.Translator.Flush();
+            //Lepo.i18n.Translator.Flush();
             // Dispose middleware resources.
         }
 
@@ -67,12 +67,12 @@ namespace UEMM.Code
             switch (language)
             {
                 default:
-                    Lepo.i18n.Translator.SetLanguage(
-                        Assembly.GetExecutingAssembly(),
-                        "en_US",
-                        "UEMM.Assets.Strings.en_US.yml",
-                        false
-                    );
+                    // Lepo.i18n.Translator.SetLanguage(
+                    //     Assembly.GetExecutingAssembly(),
+                    //     "en_US",
+                    //     "UEMM.Assets.Strings.en_US.yml",
+                    //     false
+               //     );
                     break;
             }
         }

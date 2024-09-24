@@ -1,12 +1,4 @@
-﻿
-
-using Lepo.i18n;
-using Lepo.i18n.Yaml;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Reflection;
+﻿using System.Collections.Generic;
 
 namespace UEMM.Code
 {
@@ -38,23 +30,23 @@ namespace UEMM.Code
 
         public static void Load()
         {
-            LocalizationBuilder builder = new();
-            builder.SetCulture(new CultureInfo("pl-PL"));
-
-            _ = builder.FromYaml(
-                "Assets.Strings.en_US.yml",
-                new CultureInfo("en_US")
-            );
-            
-            ILocalizationProvider localizationProvider = builder.Build();
-
-            LocalizationSet? localizationSet = localizationProvider.GetLocalizationSet(
-                new CultureInfo("en-US"),
-                default
-            );
-            
-            string provider = nameof(Load);
-            LocalizationProviderFactory.SetInstance(localizationProvider, provider);
+            // LocalizationBuilder builder = new();
+            // builder.SetCulture(new CultureInfo("pl-PL"));
+            //
+            // _ = builder.FromYaml(
+            //     "Assets.Strings.en_US.yml",
+            //     new CultureInfo("en_US")
+            // );
+            //
+            // ILocalizationProvider localizationProvider = builder.Build();
+            //
+            // LocalizationSet? localizationSet = localizationProvider.GetLocalizationSet(
+            //     new CultureInfo("en-US"),
+            //     default
+            // );
+            //
+            // string provider = nameof(Load);
+            // LocalizationProviderFactory.SetInstance(localizationProvider, provider);
 
         }
 

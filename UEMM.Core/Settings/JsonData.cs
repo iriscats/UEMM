@@ -1,6 +1,4 @@
-﻿
-
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 
 namespace UEMM.Core.Settings

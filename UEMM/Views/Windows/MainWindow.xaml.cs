@@ -1,45 +1,23 @@
-﻿
-
+﻿using System.Diagnostics;
 using UEMM.ViewModels.Windows;
-using Wpf.Ui;
-using Wpf.Ui.Appearance;
-using Wpf.Ui.Controls;
+
 
 namespace UEMM.Views.Windows;
-public partial class MainWindow : INavigationWindow
+
+public partial class MainWindow : Window
 {
-    public MainWindowViewModel ViewModel { get; }
-
-    public MainWindow(
-        MainWindowViewModel viewModel,
-        IPageService pageService,
-        INavigationService navigationService
-    )
+    public MainWindow()
     {
-        ViewModel = viewModel;
-        DataContext = this;
-
-        SystemThemeWatcher.Watch(this);
-
-        InitializeComponent();
-        SetPageService(pageService);
-
-        navigationService.SetNavigationControl(RootNavigation);
+        // ViewModel = viewModel;
+        // DataContext = this;
+        //
+        // SystemThemeWatcher.Watch(this);
+        //
+        // InitializeComponent();
+        // SetPageService(pageService);
+        //
+        // navigationService.SetNavigationControl(RootNavigation);
     }
-
-    #region INavigationWindow methods
-
-    public INavigationView GetNavigation() => RootNavigation;
-
-    public bool Navigate(Type pageType) => RootNavigation.Navigate(pageType);
-
-    public void SetPageService(IPageService pageService) => RootNavigation.SetPageService(pageService);
-
-    public void ShowWindow() => Show();
-
-    public void CloseWindow() => Close();
-
-    #endregion INavigationWindow methods
 
     /// <summary>
     /// Raises the closed event.
@@ -49,16 +27,8 @@ public partial class MainWindow : INavigationWindow
         base.OnClosed(e);
 
         // Make sure that closing this window will begin the process of closing the application.
-        Application.Current.Shutdown();
+        Process.GetCurrentProcess().Close();
     }
 
-    INavigationView INavigationWindow.GetNavigation()
-    {
-        throw new NotImplementedException();
-    }
 
-    public void SetServiceProvider(IServiceProvider serviceProvider)
-    {
-        throw new NotImplementedException();
-    }
 }
