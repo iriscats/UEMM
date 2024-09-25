@@ -1,0 +1,14 @@
+<UserControl x:Class="UEMM.Views.Pages.DashboardPage"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:UEMM.ViewModels.Pages"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             x:DataType="vm:DashboardViewModel"
+             mc:Ignorable="d">
+    <Grid ColumnDefinitions="Auto, *" 
+          RowDefinitions="Auto, Auto, Auto, Auto">
+    </Grid>
+</UserControl>

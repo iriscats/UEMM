@@ -1,6 +1,4 @@
-﻿using Avalonia;
-
-namespace UEMM;
+﻿namespace UEMM;
 
 internal static class Program
 {

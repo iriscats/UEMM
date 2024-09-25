@@ -1,8 +1,6 @@
 ﻿using System.Globalization;
-using System.IO;
 
-
-namespace UEMM.Core.Handler
+namespace UEMM.Code
 {
     internal class UnhandledException
     {
@@ -15,7 +13,7 @@ namespace UEMM.Core.Handler
 
         protected static string WriteToLog(Exception exception)
         {
-            var path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "uemm-error.txt");
+            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "uemm-error.txt");
             var reportMessage = BuildReportMessage(exception);
 
             if (File.Exists(path))
@@ -35,6 +33,15 @@ namespace UEMM.Core.Handler
                 message += "\n\nReport saved to:\n" + reportPath;
 
             //MessageBox.Show(message, "Whoa! Cyberpunk 2077 Mod Manager has flatlined.");
+            var window = new Window
+            {
+                Title = "Whoa! Cyberpunk 2077 Mod Manager has flatlined.",
+                Content = new TextBlock { Text = message },
+                Width = 400,
+                Height = 200
+            };
+
+            window.Show();
         }
 
         protected static string BuildReportMessage(Exception exception)

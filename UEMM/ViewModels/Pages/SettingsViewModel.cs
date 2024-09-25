@@ -1,6 +1,3 @@
-using UEMM.Models;
-
-
 namespace UEMM.ViewModels.Pages;
 
 public partial class SettingsViewModel : ObservableObject
